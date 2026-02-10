@@ -1,9 +1,8 @@
 require('dotenv').config();
 const express = require('express');
-const routes = require('./routes/authRoutes');
+const routes = require('../src/routes/authRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -16,6 +15,4 @@ app.get('/health', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+module.exports = app;
